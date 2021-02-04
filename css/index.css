@@ -1,0 +1,48 @@
+@font-face{
+    font-family:"Questa Grande W05 Regular";
+    src:url("Fonts/5635354/502c2321-eddf-41f9-9152-ab73ff4a4f15.woff2") format("woff2"),url("Fonts/5635354/be285cf7-89e9-442c-9a32-02bbf0c30f49.woff") format("woff");
+}
+
+body {
+    background-color: #e9e3bc;
+}
+
+.middle {
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text {
+    font-size: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 100px 150px auto;
+    grid-row-gap: 64px;
+}
+
+.home {
+    display: flex;
+}
+
+.social {
+    display: flex;
+    height: 7vh;
+}
+
+.social img {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.icons {
+    transition: all 0.3s ease 0.1s;
+}
+
+.icons:hover {
+    transform: translateY(-10%);
+}
