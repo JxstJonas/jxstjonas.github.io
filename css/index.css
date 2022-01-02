@@ -44,5 +44,19 @@ body {
 }
 
 .icons:hover {
-    transform: translateY(-10%);
+    transform: translateY(-5px);
+}
+
+span {
+    opacity: 0;
+    transition: all 1s ease;
+    display: inline-block;
+    transform: translateY(0px);
+    min-width: 16px;
+    min-height: 66px;
+}
+
+span.active {
+    opacity: 1;
+    transform: translateY(-50%);
 }
