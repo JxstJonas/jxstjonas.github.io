@@ -60,3 +60,13 @@ span.active {
     opacity: 1;
     transform: translateY(-50%);
 }
+
+@media screen and (max-width: 900px){
+    text {
+        font-size: 10px;
+    }
+    
+    .h1 {
+        font-size: 12px;
+    }
+}
