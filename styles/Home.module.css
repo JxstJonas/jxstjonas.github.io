@@ -34,6 +34,15 @@
 .icon {
     display: flex;
     align-items: flex-start;
+    width: 30px;
+    height: auto;
+    transition: all 0.3s ease 0.1s;
+}
+
+
+.icon:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
 }
 
 
