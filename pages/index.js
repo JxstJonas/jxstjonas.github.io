@@ -10,7 +10,7 @@ export default function Home() {
         <div className={styles.middle}>
             <div className={styles.grid} >
                 <div className={`${styles.flexSection}`}>
-                    <h1 className={`${styles.title} title`}>Hello, I'm Jonas</h1>
+                    <h1 className={`${styles.title} title`}>Hello, I&apos;m Jonas</h1>
                 </div>
                 <div>
                     <p className={styles.textBox}>
