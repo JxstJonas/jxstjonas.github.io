@@ -45,6 +45,25 @@
     transform: translateY(-5px);
 }
 
+.secret {
+    width: 30px;
+    opacity: 0;
+    transition: all 3s ease 1s;
+}
+
+
+.secret:hover {
+    width: 30px;
+    opacity: 1;
+}
+
+
+.flex {
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
 
 @media screen and (max-width: 600px) {
     .textBox {

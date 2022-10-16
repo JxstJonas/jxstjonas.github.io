@@ -28,6 +28,8 @@ a {
   }
 }
 
+::selection { background: #4e6324; color: #fff; }
+
 @media screen and (max-width: 1060px) {
   html,
   body {
