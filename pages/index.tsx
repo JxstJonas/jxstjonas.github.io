@@ -9,7 +9,7 @@ import Avocado from '../public/img/avocado.png'
 import * as React from 'react';
 import { tsParticles } from "tsparticles-engine";
 import Script from 'next/script';
-import { Particles } from '../components/Particle';
+import { Particle } from '../components/Particle';
 
 export default function Home() {
     let [click,setclick] = React.useState(0);
@@ -63,7 +63,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {avocado&&<Particles/>}
+            {avocado&&<Particle/>}
         </div>
     );
 }
