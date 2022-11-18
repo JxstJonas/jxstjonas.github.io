@@ -16,7 +16,14 @@ export default function Home() {
     const [display, setDisplay] = React.useState(false);
     const [avocado, setAvocado] = React.useState(false);
     const animation = async () => {
-        setAvocado(true);
+        if(avocado == false) {
+            setAvocado(true);
+            setDisplay(false)
+        } else {
+            setAvocado(false);
+            setDisplay(false)
+        }
+        setclick(0);
     }
 
     React.useEffect(() => {
@@ -63,7 +70,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {avocado&&<Particle/>}
+            <div className={styles.particle}>
+                {avocado&&<Particle/>}
+            </div>
         </div>
     );
 }

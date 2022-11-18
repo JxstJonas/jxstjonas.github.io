@@ -1,0 +1,17 @@
+.input {
+    border: none;
+    border-radius: 100px;
+    height: 5vh;
+    width: 30vw;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    outline: none;
+}
+
+.input:focus {
+    border: none;
+}
+
+.submit {
+    display: none;
+}
