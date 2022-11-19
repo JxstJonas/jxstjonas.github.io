@@ -1,12 +1,11 @@
-import { env } from 'process';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from '../styles/Login.module.css'
 import * as cookie from 'cookies-next';
 import * as crypto from 'crypto';
 import { useRouter } from 'next/router';
 
 
-export default function LoginPage() {
+export default function LoginPage(props) {
   const btnRef = useRef(null);
   const router = useRouter();
 
@@ -22,6 +21,7 @@ export default function LoginPage() {
 
     if(hash === pw.password) {
       cookie.setCookie('session_id', hash, {maxAge: 60 * 60, })
+      await fetch('/api/stats?logins=69');
       router.push('/stats/web')
     }
   }
@@ -45,6 +45,9 @@ export default function LoginPage() {
             <input type="password" id='password' name="password" placeholder='Password' className={styles.input}/>
             <button type="submit" style={{display: 'none'}} ref={btnRef}> </button>
           </form>
+          <div className={styles.hintBox}>
+            <p className={styles.hint}>eine frucht die grün ist und einen schwarzen kern hat, ist meine lieblingfrucht</p>
+          </div>
         </div>
     </div>
   )
