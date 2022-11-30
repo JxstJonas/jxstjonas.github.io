@@ -53,10 +53,6 @@ export default function Home(props) {
         };
     }, [click]);
 
-    React.useEffect(() => {
-        fetch('/api/stats?clicks=69');
-    }, [])
-
 
     return (
         <div className={styles.noSelect}>
