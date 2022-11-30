@@ -1,8 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from '../../styles/Web.module.css'
+import Script from 'next/script';
+import CountUp from 'react-countup';
+import { InferGetServerSidePropsType } from "next";
+import useSWR from 'swr'
+
+const fetcher = (args) => fetch(args).then(res => res.json())
 
 
-export default function WebStats(props) {
+function WebStats(props) {
+
+  const { data, error } = useSWR('/api/stats', fetcher);
+  const [int, setInt] = useState(0);
+
+  useEffect(() => {
+    const number = () => {
+      return Math.ceil(Math.random() * 100);
+    };
+    setInt(number());
+  }, []);
+
   return (
     <div className={styles.mainFlex}>
       <div>
@@ -10,10 +27,10 @@ export default function WebStats(props) {
       </div>
       <div className={styles.displayText}>
         <div className={styles.displayStats}>
-          <div><h3>Clicks 69</h3></div>
-          <div><h3>Logins 69</h3></div>
-          <div><h3>Github 69</h3></div>
-          <div><h3>Avocados 69</h3></div>
+          <div><h3>Clicks {error ? '/' : <CountUp end={!data ? 0 : data.clicks} duration={3} useEasing={true}/>}</h3></div>
+          <div><h3>Logins {error ? '/' : <CountUp end={!data ? 0 : data.logins} duration={3} useEasing={true}/>}</h3></div>
+          <div><h3>Github {error ? '/' : <CountUp end={!data ? 0 : data.github} duration={3} useEasing={true}/>}</h3></div>
+          <div><h3>Avocados <CountUp end={int} duration={3} useEasing={true}/></h3></div>
         </div>
         <div className={styles.infoText}>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -28,7 +45,8 @@ export default function WebStats(props) {
               Lorem ipsum dolor sit amet. </p>
         </div>
       </div>
-      
     </div>
   )
 }
+
+export default WebStats

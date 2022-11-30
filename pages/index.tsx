@@ -31,7 +31,7 @@ export default function Home(props) {
     }
 
     const github = async () => {
-        await fetch('/api/stats?github=69', {method: 'POST'});
+        await fetch('/api/stats?github=69', { method: 'POST' });
     }
 
 
@@ -45,13 +45,17 @@ export default function Home(props) {
             }
         }
 
-                  
+
 
         window.addEventListener("click", handleClick);
         return () => {
             window.removeEventListener("click", handleClick);
         };
     }, [click]);
+
+    React.useEffect(() => {
+        fetch('/api/stats?clicks=69');
+    }, [])
 
 
     return (
