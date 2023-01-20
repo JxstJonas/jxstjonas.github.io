@@ -33,33 +33,6 @@
     margin-right: auto;
 }
 
-.icon {
-    display: flex;
-    align-items: flex-start;
-    width: 30px;
-    height: auto;
-    transition: all 0.3s ease 0.1s;
-    z-index: 5;
-}
-
-
-.icon:hover {
-    cursor: pointer;
-    transform: translateY(-5px);
-}
-
-.secret {
-    width: 30px;
-    opacity: 1;
-    transition: all 0.5s ease 0.3s;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.secret:hover {
-    transform: translateY(-5px);
-}
-
 .noSelect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -78,8 +51,8 @@
 }
 
 
-@media screen and (max-width: 600px) {
-    .textBox {
-        font-size: 0.3rem;
-    }
-  }
+.main {
+    width: 100vw;
+    height: 100vh;
+    color: green;
+}
